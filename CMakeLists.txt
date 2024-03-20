@@ -40,6 +40,16 @@ target_link_libraries(example_recover_stand ${EXTRA_LIBS})
 add_executable(example_joystick example/example_joystick.cpp)
 target_link_libraries(example_joystick ${EXTRA_LIBS})
 
+# Install libraries
 
+install(
+  DIRECTORY lib/cpp/${ARCH}/
+  DESTINATION lib
+  USE_SOURCE_PERMISSIONS
+)
 
-
+install(
+  DIRECTORY include/
+  DESTINATION include
+  USE_SOURCE_PERMISSIONS
+)

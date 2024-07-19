@@ -22,14 +22,6 @@ set(EXTRA_LIBS -pthread libunitree_legged_sdk.a)
 set(CMAKE_CXX_FLAGS "-O3 -fPIC")
 set(CMAKE_CXX_STANDARD 14)
 
-find_package(catkin QUIET)
-if(${catkin_FOUND})
-  catkin_package(
-    INCLUDE_DIRS include
-    LIBRARIES ${PROJECT_SOURCE_DIR}/lib/cpp/${ARCH}/libunitree_legged_sdk.a
-  )
-endif()
-
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 # one pc one process
@@ -50,9 +42,15 @@ target_link_libraries(example_joystick ${EXTRA_LIBS})
 
 
 # install
-install(TARGETS
-  example_position example_velocity example_torque example_walk example_joystick
-  DESTINATION bin/unitree)
-install(DIRECTORY lib/cpp/${ARCH}/
-  DESTINATION lib/unitree
-  USE_SOURCE_PERMISSIONS)
+
+install(
+  DIRECTORY lib/cpp/${ARCH}/
+  DESTINATION lib
+  USE_SOURCE_PERMISSIONS
+)
+
+install(
+  DIRECTORY include/
+  DESTINATION include
+  USE_SOURCE_PERMISSIONS
+)

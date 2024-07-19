@@ -25,20 +25,20 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 # one pc one process
-add_executable(example_position example/example_position.cpp)
-target_link_libraries(example_position ${EXTRA_LIBS})
+# add_executable(example_position example/example_position.cpp)
+# target_link_libraries(example_position ${EXTRA_LIBS})
 
-add_executable(example_velocity example/example_velocity.cpp)
-target_link_libraries(example_velocity ${EXTRA_LIBS})
+# add_executable(example_velocity example/example_velocity.cpp)
+# target_link_libraries(example_velocity ${EXTRA_LIBS})
 
-add_executable(example_torque example/example_torque.cpp)
-target_link_libraries(example_torque ${EXTRA_LIBS})
+# add_executable(example_torque example/example_torque.cpp)
+# target_link_libraries(example_torque ${EXTRA_LIBS})
 
-add_executable(example_walk example/example_walk.cpp)
-target_link_libraries(example_walk ${EXTRA_LIBS})
+# add_executable(example_walk example/example_walk.cpp)
+# target_link_libraries(example_walk ${EXTRA_LIBS})
 
-add_executable(example_joystick example/example_joystick.cpp)
-target_link_libraries(example_joystick ${EXTRA_LIBS})
+# add_executable(example_joystick example/example_joystick.cpp)
+# target_link_libraries(example_joystick ${EXTRA_LIBS})
 
 
 # install
